@@ -63,11 +63,22 @@ public class FaceDetection extends Activity {
     PointF myMidPoint = new PointF();
     face.getMidPoint(myMidPoint);    
     myEyesDistance = face.eyesDistance();
+    int x = (int) (myMidPoint.x - myEyesDistance);
+    int y = (int) (myMidPoint.y - myEyesDistance);
+    int width = (int) (myMidPoint.x + myEyesDistance);
+    int height = (int) (myMidPoint.y + myEyesDistance);
     
-    canvas.drawRect((int) (myMidPoint.x - myEyesDistance),
+    myPaint.setColor(Color.RED);
+    myPaint.setAlpha(100);
+    canvas.drawCircle(myMidPoint.x, myMidPoint.y, face.eyesDistance()*2,
+                    myPaint);
+    
+    /*canvas.drawRect((int) (myMidPoint.x - myEyesDistance),
       (int) (myMidPoint.y - myEyesDistance),
       (int) (myMidPoint.x + myEyesDistance),
-      (int) (myMidPoint.y + myEyesDistance), myPaint);
+      (int) (myMidPoint.y + myEyesDistance), myPaint);*/
+    
+    //Bitmap newBitmap = Bitmap.createBitmap(myBitmap, x, y, width, height, null, false);
    }
   }
  }

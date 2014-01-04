@@ -26,7 +26,7 @@ public class MoviesActivity extends Activity {
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	            Toast.makeText(context, "" + position, Toast.LENGTH_SHORT).show();
-	            startActivity(new Intent(context, AndroidCamera.class));
+	            startActivity(new Intent(context, FaceDetection.class));
 	        }
 	    });
 
