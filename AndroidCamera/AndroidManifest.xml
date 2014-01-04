@@ -42,6 +42,10 @@
             android:name="com.example.androidcamera.MoviesActivity"
             android:label="@string/title_activity_movies" >
         </activity>
+        <activity
+            android:name="com.example.androidcamera.FaceDetection"
+            android:label="@string/title_activity_face_detection" >
+        </activity>
     </application>
 
 </manifest>
