@@ -24,7 +24,7 @@ public class TouchImageView extends ImageView {
 	// Remember some things for zooming
 	PointF last = new PointF();
 	PointF start = new PointF();
-	float minScale = 1f;
+	float minScale = 0.5f;
 	float maxScale = 3f;
 	float[] m;
 
@@ -82,6 +82,8 @@ public class TouchImageView extends ImageView {
 						matrix.postTranslate(fixTransX, fixTransY);
 						fixTrans();
 						last.set(curr.x, curr.y);
+					}else{
+						
 					}
 					break;
 

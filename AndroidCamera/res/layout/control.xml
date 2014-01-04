@@ -4,11 +4,57 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <com.example.androidcamera.TouchImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="fill_parent"
         android:layout_gravity="bottom"
-        android:src="@drawable/shirt" />
+        android:layout_height="fill_parent" />
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:background="#2C2C2C"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/leftbtn" />
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Purchase"
+                android:textColor="#f2f2f2"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#f2f2f2"
+                android:textOff="Back Cam"
+                android:textOn="Front Cam"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/rightbtn" />
+
+    </TableRow>
 
 </FrameLayout>
