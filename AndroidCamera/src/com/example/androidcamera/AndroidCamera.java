@@ -16,6 +16,8 @@ import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -293,6 +295,23 @@ public class AndroidCamera extends Activity implements SurfaceHolder.Callback{
         return optimalSize;
     }
 	*/
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+	    super.onCreateOptionsMenu(menu);
+	    createMenu(menu);
+	    return true;
+	}
+
+	private void createMenu(Menu menu){
+	    MenuItem mnu1 = menu.add(0, 0, 0, "Buy");
+	    {
+	        mnu1.setIcon(R.drawable.appbarshopping);
+	        mnu1.setShowAsAction(MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+	    }
+	}
+	
+	
 	
 	
 }

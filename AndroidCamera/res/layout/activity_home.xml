@@ -35,7 +35,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
-                        android:background="@drawable/profilebutton2" />
+                        android:background="@drawable/action" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -49,7 +49,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
-                        android:background="@drawable/profilebutton2" />
+                        android:background="@drawable/adventure" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -77,7 +77,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
-                        android:background="@drawable/profilebutton2" />
+                        android:background="@drawable/comedy" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -91,7 +91,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
-                        android:background="@drawable/profilebutton2" />
+                        android:background="@drawable/crime" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -119,7 +119,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
-                        android:background="@drawable/profilebutton2" />
+                        android:background="@drawable/horror" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -133,7 +133,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
-                        android:background="@drawable/profilebutton2" />
+                        android:background="@drawable/romance" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

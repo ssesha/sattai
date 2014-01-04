@@ -21,12 +21,12 @@ public class MoviesActivity extends Activity {
 		context = this;
 
 		GridView gridview = (GridView) findViewById(R.id.gridview);
-		gridview.setAdapter(new ImageAdapter(this));
+		gridview.setAdapter(new ImageAdapter(this,this));
 		
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	            Toast.makeText(context, "" + position, Toast.LENGTH_SHORT).show();
-	            startActivity(new Intent(context, FaceDetection.class));
+	            startActivity(new Intent(context, AndroidCamera.class));
 	        }
 	    });
 
