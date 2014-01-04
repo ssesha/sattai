@@ -14,12 +14,14 @@ import android.hardware.Camera.Size;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ToggleButton;
 
@@ -46,16 +48,16 @@ public class AndroidCamera extends Activity implements SurfaceHolder.Callback{
         
         
         
-      /*  DisplayMetrics metrics = new DisplayMetrics();
+        DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
-		float scaleWidth = metrics.scaledDensity;
-		float scaleHeight = metrics.scaledDensity;
+		float scaleWidth = metrics.widthPixels;
+		float scaleHeight = metrics. heightPixels;
         
 		
 		SurfaceView sv=(SurfaceView)findViewById(R.id.camerapreview);
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(scaleWidth, height);
-	    surface.setLayoutParams(params);
-		*/
+		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams((int) (scaleWidth*0.7f),(int) (scaleHeight*0.6f));
+		params.gravity=Gravity.CENTER_HORIZONTAL;
+		sv.setLayoutParams(params);
 		
         
         getWindow().setFormat(PixelFormat.UNKNOWN);
@@ -106,6 +108,9 @@ public class AndroidCamera extends Activity implements SurfaceHolder.Callback{
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+            	camera.stopPreview();
+            	camera.release();
+            	
                  if (tgbutton.isChecked()) {
                 	 int cameraCount = 0;
              	    //Camera cam = null;
@@ -113,7 +118,7 @@ public class AndroidCamera extends Activity implements SurfaceHolder.Callback{
              	    cameraCount = Camera.getNumberOfCameras();
              	    for ( int camIdx = 0; camIdx < cameraCount; camIdx++ ) {
              	        Camera.getCameraInfo( camIdx, cameraInfo );
-             	        if ( cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK  ) {
+             	        if ( cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
              	            try {
              	            	camera = Camera.open( camIdx );
              	            } catch (RuntimeException e) {
@@ -124,14 +129,21 @@ public class AndroidCamera extends Activity implements SurfaceHolder.Callback{
              	    }
                         
                     } else {
- 
-                    	try {
-                	            	camera = Camera.open();
-                	            } catch (RuntimeException e) {
-                	               // Log.e(TAG, "Camera failed to open: " + e.getLocalizedMessage());
-                	            	e.printStackTrace();
-                	            }
-                	        
+                    	 int cameraCount = 0;
+                  	    //Camera cam = null;
+                  	    Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+                  	    cameraCount = Camera.getNumberOfCameras();
+                  	    for ( int camIdx = 0; camIdx < cameraCount; camIdx++ ) {
+                  	        Camera.getCameraInfo( camIdx, cameraInfo );
+                  	        if ( cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+                  	            try {
+                  	            	camera = Camera.open( camIdx );
+                  	            } catch (RuntimeException e) {
+                  	               // Log.e(TAG, "Camera failed to open: " + e.getLocalizedMessage());
+                  	            	e.printStackTrace();
+                  	            }
+                  	        }
+                  	    }
                 	    
                     }
                  
